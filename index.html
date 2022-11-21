@@ -10,14 +10,13 @@ curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos
 yum clean all && yum makecache
 mkdir /backup
 cp /etc/security/limits.conf /backup
-cat >> /etc/security/limits.conf <<EOF
+cat >>/etc/security/limits.conf <<EOF
 *  soft  nofile  65535
 *  hard  nofile  65535
 *  soft  nproc  65535
 *  hard  nproc  65535
 root  soft  nproc  unlimited
 EOF
-
 ping www.baidu.com -c 1
 reboot
 </p>
